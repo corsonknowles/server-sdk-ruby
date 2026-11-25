@@ -28,6 +28,10 @@ gem 'livekit-server-sdk'
 
 and then `bundle install`.
 
+`Bundler.require` loads the gem automatically, so in a Rails app (or anything else that calls `Bundler.require`) no explicit `require` is needed. Elsewhere, load it with `require 'livekit'`; `require 'livekit/server/sdk'` works too and loads the same code.
+
+Earlier releases needed `gem 'livekit-server-sdk', require: 'livekit'` for `Bundler.require` to pick the gem up. That option still works, but you can drop it once you upgrade.
+
 ### Install system-wide
 
 ```shell
